@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+hr {
+    margin: 15px 0;
+    color: #0088ff;
+}
+
+.App {
+    width: 1000px;
+    margin-top: 30px;
+}
+
+/* CSSTransition */
+.post-enter {
+    transform: translateX(150px);
+}
+.post-enter-active {
+    transform: translateX(0px);
+    transition: opacity 300ms ease-in;
+}
+.post-exit {
+    opacity: 1;
+}
+.post-exit-active {
+    transform: translateX(-150px);
+    transition: opacity 300ms ease-in;
+}
+
+.page__wrapper {
+    margin: 30px 0;
+    display: flex;
+}
+.page {
+    background: black;
+    color: white;
+}
