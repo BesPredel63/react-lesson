@@ -12,10 +12,16 @@ export default class PostService {
         })
         return response
     }
-
+    // получаем пост по id
     static async getById(id) {
         // добавляем к url адресу id поста
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts/' + id)
+        return response
+    }
+    // получаем комментаций поста по id поста
+    static async getCommentsByPostId(id) {
+        // добавляем к url адресу id поста и комментарий
+        const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
         return response
     }
 }

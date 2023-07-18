@@ -16,6 +16,10 @@ const AppRouter = () => {
                 path='*'
                 element={<Navigate to='/error' replace />}
             />
+            <Route
+                path='/'
+                element={<Navigate to='/posts' replace />}
+            />
         </Routes>
     );
 };
