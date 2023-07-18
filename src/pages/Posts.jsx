@@ -68,7 +68,6 @@ const Posts = () => {
     return (
         <div className='App'>
             <h1>Список постов</h1>
-            <button className='btn btn-outline-dark mt-4' onClick={fetchPosts}>Запрос</button>
             <ButtonAdd onClick={() => setModal(true)}>
                 &nbsp;Добавить пост&nbsp;
             </ButtonAdd>
@@ -91,13 +90,15 @@ const Posts = () => {
                 ? <div style={{display: 'flex', justifyContent: 'center', marginTop: 25}}>
                     <Loader />
                   </div>
-                : <PostItem posts={sortedAndSearchedPosts} remove={removePost}/>
+                : <div>
+                        <PostItem posts={sortedAndSearchedPosts} remove={removePost}/>
+                        <Pagination
+                            page={page}
+                            changePage={changePage}
+                            totalPages={totalPages}
+                        />
+                  </div>
             }
-            <Pagination
-                page={page}
-                changePage={changePage}
-                totalPages={totalPages}
-            />
         </div>
     );
 };
