@@ -10,6 +10,7 @@ import Loader from "../components/UI/Loader/Loader";
 import {useFetching} from "../hooks/useFetching";
 import {getPageCount} from "../utils/pages";
 import Pagination from "../components/UI/Pagination/Pagination";
+import '../styles/App.css'
 
 const Posts = () => {
     // статический массив первичных данных
@@ -65,7 +66,7 @@ const Posts = () => {
     }
 
     return (
-        <div>
+        <div className='App'>
             <h1>Список постов</h1>
             <button className='btn btn-outline-dark mt-4' onClick={fetchPosts}>Запрос</button>
             <ButtonAdd onClick={() => setModal(true)}>

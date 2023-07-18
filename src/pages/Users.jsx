@@ -1,11 +1,10 @@
 import React, {useMemo, useState} from 'react';
-import InputLabel from "../components/UI/Inputs/InputLabel";
 import ButtonAdd from "../components/UI/Buttons/ButtonAdd";
 import UsersList from "../components/Lists/Users/UsersList";
 import UserForm from "../components/Forms/UserForm";
-import SelectSortUser from "../components/UI/Selects/SelectSortUser";
 import UserFilter from "../components/Filters/UserFilter";
 import ModalUsers from "../components/UI/ModalWindows/ModalUsers/ModalUsers";
+import '../styles/App.css'
 
 const Users = () => {
 
@@ -49,31 +48,31 @@ const Users = () => {
     }
 
     return (
-        <div>
-        <h2>Список пользователей</h2>
-            <ButtonAdd onClick={() => setModal(true)}>
-                &nbsp;Добавить пользователя&nbsp;
-            </ButtonAdd>
-            <ModalUsers visible={modal} setVisible={setModal}>
-                <UserForm create={createUser}/>
-            </ModalUsers>
-            <UserFilter
-                filter={filter}
-                setFilter={setFilter}
-            />
-            <table className="table table-striped mt-4">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>ID</th>
-                    <th>Имя</th>
-                    <th>Фамилия</th>
-                    <th>Дата рождения</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <UsersList person={sortedAndSearchedUsers} remove={removeUser} key={person.id} />
-            </table>
+        <div className='App'>
+            <h2>Список пользователей</h2>
+                <ButtonAdd onClick={() => setModal(true)}>
+                    &nbsp;Добавить пользователя&nbsp;
+                </ButtonAdd>
+                <ModalUsers visible={modal} setVisible={setModal}>
+                    <UserForm create={createUser}/>
+                </ModalUsers>
+                <UserFilter
+                    filter={filter}
+                    setFilter={setFilter}
+                />
+                <table className="table table-striped mt-4">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Имя</th>
+                        <th>Фамилия</th>
+                        <th>Дата рождения</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <UsersList person={sortedAndSearchedUsers} remove={removeUser} key={person.id} />
+                </table>
         </div>
     );
 };
